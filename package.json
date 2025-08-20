@@ -2,7 +2,14 @@
   "name": "@itau/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "npx nx run todo:serve",
+    "build": "npx nx run todo:build",
+    "build:ui": "npx nx run ui:build",
+    "test": "npx nx run todo:test",
+    "lint": "npx nx run todo:lint",
+    "graph": "npx nx graph"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~20.1.0",

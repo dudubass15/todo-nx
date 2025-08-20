@@ -21,7 +21,24 @@
             "input": "apps/todo/public"
           }
         ],
-        "styles": ["apps/todo/src/styles.scss"]
+        "styles": [
+          "apps/todo/src/styles.scss",
+          {
+            "input": "apps/todo/public/css/uikit.min.css",
+            "inject": true
+          }
+        ],
+        "scripts": [
+          {
+            "input": "apps/todo/public/js/uikit.min.js",
+            "inject": true
+          },
+          {
+            "input": "apps/todo/public/js/uikit-icons.min.js",
+            "inject": true
+          }
+        ],
+        "optimization": true
       },
       "configurations": {
         "production": {
