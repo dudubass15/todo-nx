@@ -1,0 +1,4 @@
+<label>
+  <input class="uk-checkbox" type="checkbox" [checked]="concluida ? true : false" (change)="updateStatus()" />
+  <span [ngClass]="concluida ? 'uk-text-line-through' : 'uk-text'">{{ descricao }}</span>
+</label>

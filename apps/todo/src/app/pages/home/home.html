@@ -1,8 +1,23 @@
-<!-- <div class="uk-flex uk-flex-right uk-flex-middle">
-  <lib-primary-button label="Novo" (clickChange)="onNewClick()"></lib-primary-button>
-</div> -->
-
-<div class="uk-flex uk-flex-between uk-flex-middle">
-  <lib-text-input></lib-text-input>
-  <lib-primary-button label="Salvar" (clickChange)="onNewClick()"></lib-primary-button>
-</div>
+<section class="uk-flex uk-flex-center uk-flex-wrap uk-grid-small uk-margin-medium-top" uk-grid>
+  <div class="uk-card uk-card-default uk-width-1-2@m uk-border-rounded uk-padding-remove">
+    <div class="uk-card-header">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-expand">
+          <div *ngIf="(amount_tasks | async) || 0 > 0" class="uk-card-badge uk-label uk-margin-small-top">{{ amount_tasks | async }}</div>
+          <h3 class="uk-card-title uk-margin-remove-bottom">Minhas tarefas</h3>
+          <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">{{ date | date: 'fullDate'}}</time></p>
+        </div>
+      </div>
+    </div>
+    <div class="uk-card-body">
+      <ul class="uk-list uk-list-large uk-list-striped">
+        <li *ngFor="let task of tasks" class="uk-flex uk-flex-between uk-flex-middle">
+          <lib-item-todo [id]="task.id" [descricao]="task.descricao" [concluida]="task.concluida" (clickChange)="updateTaskStatus($event)"></lib-item-todo>
+          <button class="uk-button-small" (click)="deleteTask(task.id)" uk-tooltip="title: Deletar tarefa; pos: left">
+            <span uk-icon="trash"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

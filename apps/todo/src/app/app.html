@@ -1,18 +1,6 @@
 <nav class="uk-navbar-container">
-  <div class="uk-container">
-    <div uk-navbar>
-      <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home">My Todo</a>
-      </div>
-      <!-- <div class="uk-navbar-right">
-        <div class="uk-navbar-item">
-          <form action="javascript:void(0)">
-            <input class="uk-input uk-form-width-small" type="text" placeholder="Input" aria-label="Input">
-            <button class="uk-button uk-button-default">Button</button>
-          </form>
-        </div>
-      </div> -->
-    </div>
+  <div class="uk-container-expand uk-flex uk-flex-row uk-flex-between">
+    <button *ngFor="let item of months" class="uk-button" [ngClass]="item === month ? 'uk-button-primary' : 'uk-button-default'" (click)="onClick(item)">{{ item }}</button>
   </div>
 </nav>
 
